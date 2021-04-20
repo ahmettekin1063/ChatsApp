@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "569126772513",
+    "project_id": "fir-kotlin-de3fc",
+    "storage_bucket": "fir-kotlin-de3fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569126772513:android:ce8f03e78bccc8e13ae860",
+        "android_client_info": {
+          "package_name": "com.ahmettekin.chatsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "569126772513-77nuri2iejicq9gng3nemvdjt873o11a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk2wrnkXkBA-f-D8dxU5IWZIJjKALgTSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "569126772513-77nuri2iejicq9gng3nemvdjt873o11a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
