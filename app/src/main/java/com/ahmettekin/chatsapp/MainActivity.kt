@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initAuthStateListener()
-        setUserInfo()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -53,7 +52,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun initAuthStateListener() {
         myAuthStateListener= FirebaseAuth.AuthStateListener {
-            it.currentUser?.let {}
             if (FirebaseAuth.getInstance().currentUser==null){
                 startActivity(Intent(this,LoginActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
                 finish()
@@ -76,6 +74,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         userControl()
+        setUserInfo()
     }
 
     override fun onStop() {

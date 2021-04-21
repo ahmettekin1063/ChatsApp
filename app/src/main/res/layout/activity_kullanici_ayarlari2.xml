@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".KullaniciAyarlariActivity">
 
+    <Button
+        android:id="@+id/btnSifreveyaMailGuncelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C8C8C8"
+        android:text="MAIL - ŞİFRE GÜNCELLE"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnYeniIsimKaydet"
+        app:layout_constraintStart_toEndOf="@+id/btnSifreGonder"
+        app:layout_constraintTop_toTopOf="@+id/btnSifreGonder" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -25,9 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="40dp"
-        android:text="Şu anki e-mail:"
+        android:text="Şu anki Şifre:"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/etDetayMail"
+        app:layout_constraintEnd_toStartOf="@+id/etDetaySifre"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -45,26 +57,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etDetayMail"
+        android:id="@+id/etDetaySifre"
         android:layout_width="254dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Şu anki E-mail"
-        android:inputType="textPersonName"
+        android:hint="Şu anki Parola"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@+id/etDetayName"
         app:layout_constraintTop_toBottomOf="@+id/etDetayName" />
 
     <Button
-        android:id="@+id/btnDegisiklikleriKaydet"
+        android:id="@+id/btnYeniIsimKaydet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="DEĞİŞİKLİKLERİ KAYDET"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnSifreGonder"
         android:backgroundTint="#C8C8C8"
-        android:textColor="@color/black"/>
+        android:text="Yeni ismi Kaydet"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnSifreGonder" />
 
     <Button
         android:id="@+id/btnSifreGonder"
@@ -72,9 +85,88 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="şifre sıfırla"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
         android:backgroundTint="#C8C8C8"
-        android:textColor="@color/black"/>
+        android:text="şifre sıfırla"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/guncelleLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSifreveyaMailGuncelle">
+
+        <Button
+            android:id="@+id/btnSifreGuncelle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="72dp"
+            android:backgroundTint="#C8C8C8"
+            android:text="şifre GÜNCELLE"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnMailGuncelle"
+            app:layout_constraintEnd_toStartOf="@+id/btnMailGuncelle" />
+
+        <Button
+            android:id="@+id/btnMailGuncelle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="59dp"
+            android:backgroundTint="#C8C8C8"
+            android:text="MAIL GÜNCELLE"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/etYeniSifre2"
+            app:layout_constraintTop_toBottomOf="@+id/etYeniSifre2" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="Yeni Email:"
+            app:layout_constraintBaseline_toBaselineOf="@+id/etYaniEmail"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yeni Şifre:"
+            app:layout_constraintBaseline_toBaselineOf="@+id/etYeniSifre2"
+            app:layout_constraintStart_toStartOf="@+id/textView5" />
+
+        <EditText
+            android:id="@+id/etYaniEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="29dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etYeniSifre2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="@+id/etYaniEmail"
+            app:layout_constraintTop_toBottomOf="@+id/etYaniEmail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

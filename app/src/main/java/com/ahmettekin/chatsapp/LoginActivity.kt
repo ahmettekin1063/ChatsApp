@@ -15,7 +15,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        initMyAuthStateListener()
         configureListener()
     }
 
@@ -54,6 +53,7 @@ class LoginActivity : AppCompatActivity() {
         tvSifreTekrarYolla.setOnClickListener {
             SifremiUnuttumDialogFragment().show(supportFragmentManager, "gosterdialogsifre")
         }
+        initMyAuthStateListener()
     }
 
     private fun initMyAuthStateListener() {
